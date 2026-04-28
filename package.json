@@ -1,0 +1,17 @@
+{
+  "name": "api-testing-suite",
+  "version": "1.0.0",
+  "description": "API Testing Suite with Postman, Newman, and CI/CD integration",
+  "scripts": {
+    "test": "newman run collections/reqres-api-tests.postman_collection.json -e environments/reqres-env.postman_environment.json --reporters cli,htmlextra,json --reporter-htmlextra-export reports/api-test-report.html --reporter-json-export reports/api-test-results.json",
+    "test:verbose": "newman run collections/reqres-api-tests.postman_collection.json -e environments/reqres-env.postman_environment.json --reporters cli --verbose",
+    "test:folder:users": "newman run collections/reqres-api-tests.postman_collection.json -e environments/reqres-env.postman_environment.json --folder 'User Management' --reporters cli",
+    "test:folder:auth": "newman run collections/reqres-api-tests.postman_collection.json -e environments/reqres-env.postman_environment.json --folder 'Authentication' --reporters cli"
+  },
+  "devDependencies": {
+    "newman": "^6.1.0",
+    "newman-reporter-htmlextra": "^1.23.0"
+  },
+  "author": "Sai Sharanya Rangineni",
+  "license": "MIT"
+}

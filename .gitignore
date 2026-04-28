@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Test reports (generated at runtime)
+reports/
+
+# Environment files with secrets (keep example/template only)
+environments/*.postman_environment.json
+!environments/*.postman_environment.example.json
+
+# Logs
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
