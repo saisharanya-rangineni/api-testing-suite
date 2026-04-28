@@ -31,6 +31,11 @@ jobs:
       - name: Create reports directory
         run: mkdir -p reports
 
+      - name: Create environment file
+        run: |
+          cp environments/reqres-env.postman_environment.example.json environments/reqres-env.postman_environment.json
+          sed -i 's/YOUR_REQRES_API_KEY_HERE/${{ secrets.REQRES_API_KEY }}/' environments/reqres-env.postman_environment.json
+
       - name: Run Newman tests
         run: npm test
 
